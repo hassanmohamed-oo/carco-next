@@ -88,7 +88,7 @@ export default function Home(/*{searchParams}:HomeProps*/) {
             <ShoeMore
             pageNumber={limit/10}
             isNext={limit >allCars.length}
-            setlimit={{setlimit}}
+            setlimit= {setlimit}
             />
           </section>
             :

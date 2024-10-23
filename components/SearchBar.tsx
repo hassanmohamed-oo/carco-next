@@ -4,6 +4,7 @@ import SearchManufactorer from './SearchManufactorer'
 import { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { SearchBarProps } from '@/types'
 
 
 const SearchButton=({otherclasses}:{otherclasses:string})=>(
@@ -11,10 +12,9 @@ const SearchButton=({otherclasses}:{otherclasses:string})=>(
         <Image src="/magnifying-glass.svg" alt='serach icon' width={40} height={40} className='object-contain'/>
       </button>
     )
-const SearchBar = ({setmanufactorer,setmodel}) => {
+const SearchBar = ({setmanufactorer,setmodel}:SearchBarProps) => {
     const [searchmodel, setsearchmodel] = useState('')
     const [searchmanufactorer, setsearchmanufactorer]=useState('');
-    const router =useRouter();
     const handlesearch =(e:React.FormEvent<HTMLFormElement>)=>{
         e.preventDefault();
         if(searchmanufactorer.trim()===''&&searchmodel.trim()===''){

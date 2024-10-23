@@ -11,8 +11,13 @@ export interface CustomButtonProps {
     isDisabled?:boolean;
 }
 export interface SearchManufactorerProps {
-    manufactorer:string,
+    selected:string,
+    setselected:(manufactorer:string)=>void
+}
+export interface SearchBarProps {
+    
     setmanufactorer:(manufactorer:string)=>void
+    setmodel:(model:string)=>void
 }
 export interface carProps {
     city_mpg:number
@@ -45,8 +50,10 @@ export interface OptionsProps{
 export interface CustomFilterProps{
     title:string
     options:OptionsProps[]
+    setFilter:(Filter:any)=>void
 }
 export interface showMoreProps{
+    setlimit:(limit:number)=>void
     pageNumber:number
     isNext:boolean
 }
